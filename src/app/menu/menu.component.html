@@ -1,0 +1,17 @@
+<div class="menu" #blogMenu>
+    <div class="menu__section">
+        <div class="header">
+            <h4 class="header__text">Categories</h4>
+        </div>
+        <app-category></app-category>
+    </div>
+    <div class="menu__section">
+        <div class="header">
+            <h4 class="header__text">Archives</h4>
+        </div>    
+        <app-archive></app-archive>
+    </div>
+</div>
+<div class="list__icon" (click)="openList()">
+    <fa-icon [icon]="faFilter"></fa-icon>
+</div>

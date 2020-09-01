@@ -1,0 +1,89 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+$color-main: #66fcf1;
+$color-main--hover: #45a29e;
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+.admin{
+    width: 100%;
+    background-color: $color-dark--open;
+    .admin__header{
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 100%;
+        background-color: $color-main--hover;
+        .header__left{
+            display: flex;
+            align-items: center;
+            flex: 1 1 100%;
+            padding-left: 1rem;
+        }
+        .header__right{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1 1 100%;
+            .notification{
+                color: $color-dark;
+                padding:.25rem;
+                font-size: 1.5rem;
+                padding-right: 1rem;
+            }
+            .user{
+                color: $color-dark;
+                padding:.25rem;
+                font-size: 1.5rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+    .admin__summary{
+        background-color: $color-dark--open;
+        .row{
+            margin:0;
+        }
+        .card{
+            border-color: $color-main--hover;
+            .card-body{
+                background-color: $color-main--hover;
+                display: flex;
+                align-items: center;
+                .body__left{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                }
+                .body__right{
+                    display: flex;
+                    width: 50%;
+                    justify-content: flex-end;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    .admin__list{
+        display: flex;
+        flex-wrap: wrap;
+        .list__section{
+            display: flex;
+            flex:1 1 100%;
+        }
+    }
+}
+
+@media (min-width: 1200px) { 
+    .admin{
+        .admin__list{
+            .list__section{
+                padding:1rem;
+                flex:1 1 50%;
+            }
+        }
+    }
+}

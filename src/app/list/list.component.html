@@ -1,0 +1,20 @@
+<div class="contents">
+    <div class="contents__item" *ngFor="let blog of blogList">
+        <div class="item__link">
+            <div class="item__image">
+                <img src="{{blog.imagePath}}">
+            </div>
+            <div class="item__header">
+                <h5 class="card-title">{{blog.title }}</h5>
+            </div>
+            <div class="item__body">
+                {{blog.contents}}
+            </div>
+        </div>
+        <div class="item__footer">
+            <a [routerLink]="['/blog',blog.id]"  class="btn btn-page">
+                <span class="">Go to Page</span>
+            </a>
+        </div>
+    </div>
+</div>

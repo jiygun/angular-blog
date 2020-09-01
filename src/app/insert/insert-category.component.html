@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <form #form="ngForm">
+        <div class="form-group">
+            <label>Category</label>
+            <input required minlength="3" maxlength="20" [(ngModel)]="categoryModel.categoryName" type="text" name="category" #cate="ngModel" class="form-control" placeholder="Category">
+            <div *ngIf="form.invalid&&isSubmit">
+                <p *ngIf="cate.errors.required"></p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info btn-block"  (click)="submit(form)">Submit</button>
+    </form>
+</div>

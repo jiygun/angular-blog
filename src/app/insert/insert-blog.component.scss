@@ -1,0 +1,11 @@
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+:host{
+    display: block;
+    width: 100%;
+    background-color: $color-dark--open;
+    overflow: auto;
+}
+label{
+    color: $color-white;
+}

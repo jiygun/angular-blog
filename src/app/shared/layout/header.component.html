@@ -1,0 +1,32 @@
+<div class="navbar">
+    <div class="container">
+        <div class="navbar__left">
+            <div class="mobile-icon">
+                <a class="mobile__button btn" (click)="openMenu(menuList)"><fa-icon [icon]="faBars"></fa-icon></a>
+            </div>
+            <div class="logo">
+                <a routerLink='/' class="logo__link">JiyanGungen</a>
+            </div>
+            <div class="fixer">
+                
+            </div>
+        </div>
+        <div class="navbar__center" #menuList>
+            <div class="menulinks">
+                <ul class="menulinks__list">
+                    <li class="menulinks__item"><a [routerLink]="['/']">Home</a></li>
+                    <li class="menulinks__item"><a [routerLink]="['/blog']">Blog</a></li>
+                    <li class="menulinks__item"><a [routerLink]="['/about']">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar__right" (click)="setSearchDisplay($event)">
+            <div class="search">
+                <a class="search__icon"><fa-icon [icon]="faSearch"></fa-icon></a>
+                <div class="search__input" #searchInput [class]="showSearchBox()">
+                    <input class="input" type="text" name="search" placeholder="Search">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

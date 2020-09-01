@@ -1,0 +1,215 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+$color-main: #66fcf1;
+$color-main-hover: #45a29e;
+
+:host{
+    display: block;
+    z-index: 99;
+    position: relative;
+    width: 100%;
+    z-index: 666;
+}
+.navbar{
+    background-color: $color-dark;
+    padding:0;
+    border-bottom:1px solid $color-main-hover;
+    .container{
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        padding:0;
+        margin:0;
+        .navbar__left{
+            display: flex;
+            flex:0 0 100%;
+            justify-content: flex-start;
+            align-items: center;
+            padding: .65rem 0;
+            .mobile-icon{
+                display: flex;
+                .mobile__button{
+                    color: $color-main;
+                }
+            }
+            .logo{
+                display: flex;
+                justify-content: flex-end;
+                flex:1 0 33.333%;
+                padding-right: .65rem;
+                .logo__link{
+                    color: $color-main;
+                    font-size: 1.3rem;
+                }
+            }
+            /*
+            .fixer{
+                display: flex;
+                flex:1 0 33.333%;
+            }
+            */
+        }
+        .navbar__center{
+            display: flex;
+            flex:1 0 100%;
+            position: relative;
+            max-height: 0;
+            overflow-y: hidden;
+            .menulinks{
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: $color-dark;
+                .menulinks__list{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin:0 !important;
+                    .menulinks__item{
+                        cursor: pointer;
+                        color: $color-main;
+                        border-bottom: 1px solid $color-white;
+                        a{
+                            display: block;
+                            color: $color-main;
+                            width: 100%;
+                            padding:.5rem .75rem;
+                            &:hover{
+                                color: $color-main-hover;
+                            }
+                        }
+                        &:first-child{
+                            border-top: 1px solid $color-white;
+                        }
+                    }
+                }
+            }
+        }
+        .navbar__right{
+            display: flex;
+            width: 100%;
+            .search{
+                width: 100%;
+                a.search__icon{
+                    display: none;
+                    cursor: pointer;
+                    border-radius: 25%;
+                    background-color: $color-main;
+                    transition: .5s;                    
+                    fa-icon{
+                        color:$color-dark;
+                        padding: 0 .25rem;
+                    }
+                }
+                .search__input{
+                    display: flex;
+                    input{
+                        font-size: 1rem;
+                        border: 1px solid $color-main-hover;
+                        border-radius: 3px;
+                        background-color: $color-main-hover;
+                        color: white;
+                        padding:.25rem .5rem;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &.navbar--fixed{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        animation-name: navbarfix;
+        animation-duration: .75s;
+    }
+}
+@keyframes opensearch{
+    from{right:-350px;}
+    to {right:0px;}
+}
+@keyframes navbarfix{
+    from{top:-100%;}
+    to {top:0;}
+}
+@media (min-width: 992px) { 
+    .navbar{
+        .container{
+            max-width: 960px !important;
+            margin:0 auto;
+            padding: .75rem 0;
+            .navbar__left{
+                justify-content: flex-start;
+                flex:1 0 30%;
+                .mobile-icon{
+                    display: none;
+                }
+                .logo{
+                    justify-content: flex-start;
+                }
+                .fixer{
+                    display: none;
+                }
+            }
+            .navbar__center{
+                display: flex;
+                justify-content: flex-end;
+                flex:1 0 65%;
+                max-height: 100% !important;
+                transition: all 0s;
+                .menulinks{
+                    width: auto;
+                    .menulinks__list{
+                        flex-direction: row;
+                        justify-content: center;
+                        margin:0 !important;
+                        .menulinks__item{
+                            border-bottom: none;
+                            &:first-child{
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .navbar__right{
+                display: flex;
+                width: auto;
+                justify-content: flex-end;
+                flex:1 0 5%;
+                .search{
+                    position: relative;
+                    width: auto;
+                    a.search__icon{
+                        display: flex;
+                    }
+                    .search__input{
+                        position: absolute;
+                        top: -5px;
+                        right: -400px;
+                        input{
+                            width: 350px;
+                        }
+                        &.active--flex{
+                            animation-name: opensearch;
+                            animation-duration: 1.5s;
+                            right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @keyframes opensearch{
+        from{right:-400px;}
+        to {right:0px;}
+    }
+}
+@media (min-width: 1200px) { 
+    .navbar{
+        .container{
+            max-width: 1140px !important;
+        }
+    }
+}

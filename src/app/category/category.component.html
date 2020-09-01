@@ -1,0 +1,7 @@
+<ul class="menu__list">
+    <li class="menu__item" *ngFor="let category of categoryList" [class.item__active]="checkInCategory(category)">
+        <a class="item__link category__link" (click)="setActiveCategory(category)">
+            {{category.categoryName}}
+        </a>
+    </li>
+</ul>

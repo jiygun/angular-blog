@@ -1,0 +1,7 @@
+<ul class="menu__list">
+    <li class="menu__item" *ngFor="let archive of archiveList"  [class.item__active]="checkInArchive(archive)">
+        <a class="item__link" (click)="setActiveArchive(archive)">
+            {{archive.date.getMonth()+1 | convertMonth}} {{archive.date.getFullYear()}}
+        </a>
+    </li>
+</ul>

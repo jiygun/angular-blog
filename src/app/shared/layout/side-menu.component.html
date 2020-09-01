@@ -1,0 +1,8 @@
+<div class="side__menu" [ngStyle]="sideMenuStyle()" #sideMenu>
+    <span>Admin</span>
+    <ul class="side__list">
+        <li class="side__item"><a [routerLink]="['/admin']" >Index</a></li>
+        <li class="side__item"><a [routerLink]="['blog']" >Add Blog</a></li>
+        <li class="side__item"><a [routerLink]="['category']">Add Category</a></li>
+    </ul>
+</div>

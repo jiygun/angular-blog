@@ -1,0 +1,100 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+$color-main: #66fcf1;
+$color-main--hover: #45a29e;
+:host{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.comment_list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &.subcomment{
+        width: 96%;
+    }
+    .comment_item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        .comment_header{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+            border-bottom: 1px solid $color-dark--open;
+            padding:.75rem;
+            background-color: $color-white;
+            border-radius: 10px 10px 0 0;
+            margin-top: .5rem;
+            .comment_image{
+                background-image: url("../../assets/images/avatar.jpg");
+                width: 50px;
+                height:50px;
+                background-repeat: no-repeat;
+            }
+            .comment_information{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .comment_author{
+                    font-weight: bold;
+                }
+                .comment_date{
+                    font-size: .75rem;
+                }
+            }
+            .comment_footer{
+                display: flex;
+                flex: 1 1 auto;
+                justify-content: flex-end;
+                align-items: center;
+                background-color: $color-white;
+                padding-right: .5rem;
+                a{
+                    color: $color-dark--open;
+                    &:hover{
+                        color: $color-dark;
+                    }
+                }
+            }
+        }
+        .comment_content{
+            width: 100%;
+            margin-bottom: 10px;
+            padding:15px;
+            padding-left: 30px;
+            background-color: $color-white;
+            border-radius:0 0 10px 10px;
+            word-wrap: break-word;
+            white-space:pre-wrap;
+        }
+        .comment-answer{
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            background-color: $color-dark--open;
+            border-radius: 10px;
+            transition: 0.5s all linear;
+            .answer_form{
+                padding: 20px;
+                .form-group{
+                    label{
+                        color: $color-white;
+                    }
+                    .col-sm-2{
+                        .btn{
+                            width: 100%;  
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

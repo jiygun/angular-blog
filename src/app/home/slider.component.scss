@@ -1,0 +1,58 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+$color-main: #66fcf1;
+$color-main-hover: #45a29e;
+.banner__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:.5rem 0;
+    .banner__item{
+        padding:.25rem;
+        margin:0 .25rem;
+        .banner__image{
+            display: none;
+            opacity: .5;
+            max-width: 150px;
+            max-height: 150px;
+            object-fit: cover;
+        }
+        .banner__circle{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color-white;
+        }
+        &.banner--active{
+            border-color: $color-main-hover;
+            .banner__item{
+                border-color: $color-main-hover;
+            }
+            img{
+                opacity: 1;
+            }
+            .banner__circle{
+                background-color: $color-main-hover;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) { 
+    .banner__list{
+        .banner__item{
+            border:1px solid $color-main;
+            .banner__image{
+                display: flex;
+                opacity: .5;
+                max-width: 150px;
+                max-height: 150px;
+                object-fit: cover;
+            }
+            .banner__circle{
+                display: none;
+            }
+        }
+    }
+}

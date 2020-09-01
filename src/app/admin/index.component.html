@@ -1,0 +1,85 @@
+<div class="admin">
+    <div class="admin__header">
+        <div class="header__left">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="header__right">
+            <div class="notification">
+                <a class=""><fa-icon [icon]="faBell"></fa-icon></a>
+            </div>
+            <div class="user">
+                <a class=""><fa-icon [icon]="faUser"></fa-icon></a>
+            </div>
+        </div>
+    </div>
+    <div class="admin__summary">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-3 p-4 my-1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="body__left float-left">
+                            <h3>{{blogLength}}</h3>
+                            <span>Blog</span>
+                        </div>
+                        <div class="body__right float-right">
+                            <fa-icon [icon]="faFileAlt"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 p-4 my-1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="body__left float-left">
+                            <h3>{{archiveLength}}</h3>
+                            <span>Archive</span>
+                        </div>
+                        <div class="body__right float-right">
+                            <fa-icon [icon]="faArchive"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 p-4 my-1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="body__left float-left">
+                            <h3>{{commentLength}}</h3>
+                            <span>Comment</span>
+                        </div>
+                        <div class="body__right float-right">
+                            <fa-icon [icon]="faComments"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 p-4 my-1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="body__left float-left">
+                            <h3>{{categoryLength}}</h3>
+                            <span>Category</span>
+                        </div>
+                        <div class="body__right float-right">
+                            <fa-icon [icon]="faList"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin__list">
+        <div class="list__section">
+            <app-table-list [tableHead]="blogTitle" [itemList]="blogList"></app-table-list>
+        </div>
+        <div class="list__section">
+            <app-table-list [tableHead]="categoryTitle" [itemList]="categoryList"></app-table-list>
+        </div>
+        <div class="list__section">
+            <app-table-list [tableHead]="archiveTitle" [itemList]="archiveList"></app-table-list>
+        </div>
+        <div class="list__section">
+            <app-table-list [tableHead]="commentTitle" [itemList]="commentList"></app-table-list>
+        </div>
+    </div>
+</div>

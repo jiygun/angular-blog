@@ -1,0 +1,32 @@
+<div class="detail">
+    <div class="detail_header">
+        <div class="header_title">
+            <h2>{{blog.title}}</h2>
+        </div>
+        <div class="header_content">
+            <div class="content content_author">Author : {{blog.author}}</div>
+            <div class="content content_category">Head : {{blog.head}}</div>
+            <div class="content content_date ta-r">{{blog.date===undefined?"":(blog.date.getDate()+'/'+blog.date.getMonth()+'/'+blog.date.getFullYear())}}</div>
+        </div>
+    </div>
+    <div class="detail_image">
+        <img src="{{blog.imagePath}}" alt="">
+    </div>
+    <div class="detail_body">
+        <p class="body_content" *ngFor="let content of blog.contents">
+            {{content}}
+        </p>
+    </div>
+    <div class="detail_footer">
+        <div class="footer_pagelink footer_prev" [class.disabled]="">
+            <a class="pagelink pagelink_prev" [routerLink]="['/detail']">Prev</a>
+        </div>
+        <div class="footer_pagelink footer_next" [class.disabled]="">
+            <a class="pagelink pagelink_next" [routerLink]="['/detail']">Next</a>
+        </div>
+        <app-ask [blogId]="blog.id" (commentIsChanged)="commentIsChanged($event)"></app-ask>
+    </div>
+    <div class="detail_comment">
+        <app-comment [commentList]="commentList" (commentIsChange)="commentIsChanged($event)"></app-comment>
+    </div>
+</div>

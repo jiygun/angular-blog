@@ -1,0 +1,7 @@
+<div class="list">
+    <div class="container">
+        <app-list class="blog__list" [blogList]="blogList"></app-list>
+        <app-menu class="blog__menu"></app-menu>
+        <angular-paginate [totalPages]="totalPage" [maximumShowAblePage]="5"  (activePageNumber)="activePage($event)"></angular-paginate>
+    </div>
+</div>

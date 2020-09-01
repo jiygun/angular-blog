@@ -1,0 +1,43 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-white:#C5C6C7;
+$color-main: #66fcf1;
+$color-main-hover: #45a29e;
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+.menu__list{
+    width: 100%;
+    margin-bottom: 0 !important;
+    .menu__item{
+        background-color: $color-dark;
+        border-bottom:1px solid  $color-dark--open;
+        cursor: pointer;
+        transition: .3s all;
+        a{
+            display: block;
+            color: $color-white;
+            padding:.5rem;
+            width: 100%;
+        }
+        &:hover{
+            background-color: $color-main-hover;
+            a{
+                color: $color-dark;
+            }
+        }
+        &:last-child{
+            border-radius: 0 0 10px 10px;
+        }
+        &.item__active{
+            background-color: $color-main-hover;
+            border-bottom: 1px solid $color-dark;
+            a{
+                color: $color-dark;
+            }
+        }
+    }
+}

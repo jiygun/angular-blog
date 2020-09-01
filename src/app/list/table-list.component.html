@@ -1,0 +1,21 @@
+<table class="table table-striped table-dark">
+    <thead class="thead-dark">
+      <tr class="table__list">
+        <th class="list__head">{{tableHead}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itemList; let i=index;" class="table__list">
+        <th class="list__count" scope="row">{{item.id}}</th>
+        <td class="list__name" *ngIf="item.name">{{item.name |textSummary:12}}</td>
+        <td class="list__image" *ngIf="item.imagePath"><img src="{{item.imagePath}}" alt=""></td>
+        <td class="list__head" *ngIf="item.head">{{item.head|textSummary:12}}</td>
+        <td class="list__content" *ngIf="item.author">{{item.author|textSummary:15}}</td>
+        <td class="list__content content--category" *ngIf="item.categoryName">{{item.categoryName}}</td>
+        <td class="list__content" *ngIf="item.content">{{item.content | textSummary:30}}</td>
+        <td class="list__date" *ngIf="item.imagePath&&item.date">{{item.date.getMonth()+1}}/{{item.date.getFullYear()}}</td>
+        <td class="list__content content--archive" *ngIf="!item.imagePath&&item.date&&!item.name">{{(item.date.getMonth()+1)|convertMonth}}/{{item.date.getFullYear()}}</td>
+        <td class="list__delete" (click)="deleteItem(item)"><a class="delete__button"></a></td>
+      </tr>
+    </tbody>
+</table>

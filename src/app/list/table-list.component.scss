@@ -1,0 +1,114 @@
+$color-white:#C5C6C7;
+
+:host{
+    display: flex;
+    width: 100%;
+}
+
+.table{
+    display: block;
+    overflow-x: hidden;
+    margin:.5rem 0;
+    thead.thead-dark{
+        display: block;
+        .table__list{
+            display: block;
+            width: 100%;
+            .list__head{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    tbody{
+        display: block;
+        .table__list{
+            display: flex;
+            flex:1 1 100%;
+            td{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                vertical-align: middle;
+                padding: 0;
+            }
+            th{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                vertical-align: middle;
+                padding: 0;
+            }
+            .list__count{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5%;
+                padding: .5rem 0;
+            }
+            .list__image{
+                display: flex;
+                width: 5%;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            .list__name{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 55%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .list__head{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 40%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .list__content{
+                display: flex;
+                justify-content: flex-start;
+                width:35%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &.content--category{
+                    width: 90%;
+                }
+                &.content--archive{
+                    width: 90%;
+                }
+            }
+            .list__date{
+                display: flex;
+                width: 10%;
+            }
+            .list__delete{
+                display: flex;
+                width: 5%;
+                .delete__button{
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    background-color:firebrick;
+                    position: relative;
+                    cursor: pointer;
+                    &::before{
+                        content: 'x';
+                        color: white;
+                        position: absolute;
+                        left: 10px;
+                        top:-3px;
+                    }
+                }
+            }
+        }
+    }
+}

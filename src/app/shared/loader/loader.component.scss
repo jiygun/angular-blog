@@ -1,0 +1,100 @@
+$color-dark: #0B0C10;
+$color-dark--open:#1f2833;
+$color-main:#802bb1;
+$color-main--dark:#2d283e;
+$color-main--open:#564f6f;
+$color-main--dopen:#4c495d;
+$color-white:#d1d7e0;
+.back-block{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $color-dark;
+    opacity: 0.3;
+    z-index: 444;
+}
+
+.loader{
+    z-index: 555;
+    position: fixed;
+    height: 32px;
+    width: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation: animation-1 3s linear infinite;
+    animation: animation-1 3s linear infinite;
+  }
+  @-webkit-keyframes animation-1 {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes animation-1 {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+  .loader span {
+      display: block;
+      position: absolute;
+      top: 0; 
+      left: 0;
+      bottom: 0; 
+      right: 0;
+      margin: auto;
+      height: 32px;
+      width: 32px;
+      clip: rect(16px, 32px, 32px, 0);
+      -webkit-animation: animation-2 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+      animation: animation-2 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+  }
+  @-webkit-keyframes animation-2 {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes animation-2 {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+  .loader span::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0; 
+      left: 0;
+      bottom: 0; 
+      right: 0;
+      margin: auto;
+      height: 32px;
+      width: 32px;
+      border: 3px solid transparent;
+      border-top: 3px solid $color-dark;
+      border-radius: 50%;
+      -webkit-animation: animation-3 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+              animation: animation-3 1.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+  }
+  @-webkit-keyframes animation-3 {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes animation-3 {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+  .loader span::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0; 
+      left: 0;
+      bottom: 0; 
+      right: 0;
+      margin: auto;
+      height: 32px;
+      width: 32px;
+      border: 3px solid $color-white;
+      border-radius: 50%;
+  }

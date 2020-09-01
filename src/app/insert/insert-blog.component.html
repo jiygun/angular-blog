@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <form #form="ngForm">
+        <div *ngIf="form.invalid&&isSubmit" class="alert alert-danger" role="alert">
+            <ul>
+                <li *ngFor="let error of getErrors(form)" class="list-group-item list-group-item-danger">{{error}}</li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input required minlength="5" maxlength="20" [(ngModel)]="blogModel.title" type="text" name="title"
+                #title="ngModel" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label>Head</label>
+            <input required [(ngModel)]="blogModel.head" type="text" name="head" #head="ngModel"
+                class="form-control" placeholder="Head">
+        </div>
+        <div class="form-group">
+            <label>Author</label>
+            <input required type="text" [(ngModel)]="blogModel.author" name="author" #author="ngModel"
+                class="form-control" placeholder="Author">
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input required type="date" [(ngModel)]="blogModel.date" name="date" #date="ngModel" class="form-control"
+                placeholder="Date">
+        </div>
+        <div class="form-group">
+            <label>Image Path</label>
+            <input required type="text" [(ngModel)]="blogModel.imagePath" name="imagePath" #imagePath="ngModel"
+                class="form-control" placeholder="Image Path">
+        </div>
+
+        <select required class="custom-select mt-3 mb-3" [(ngModel)]="categoryId" name="category" #category="ngModel">
+            <option *ngFor="let cat of categories" value="{{cat.id}}">{{cat.categoryName}}</option>
+        </select>
+
+        <div class="form-group" *ngFor="let paragraph of paragraphs;let i = index">
+            <label>Paragraph</label>
+            <textarea type="text" [(ngModel)]="blogModel.contents[i]" name="{{i}}" class="form-control"
+                placeholder="Paragraph"></textarea>
+        </div>
+        <ng-template #content></ng-template>
+        <div class="form-group">
+            <button class="btn btn-warning btn-block" (click)="addContents()">Add Paragraph</button>
+        </div>
+        <button type="submit" class="btn btn-info btn-block" (click)="submit(form)">Submit</button>
+    </form>
+</div>
